@@ -1,0 +1,374 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-image: url("images/clockway.png");
+  display: block;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  overflow: hidden;
+}
+.center-bottom {
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+}
+.center1 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.center2 {
+  display: flex;
+  justify-content: flex-start; /* left */
+  align-items: flex-end; /* bottom */
+}
+
+img {
+  max-height: 65%;
+  filter: grayscale(100%);
+}
+.cal_cursor {
+  cursor: url("images/sea_serpent_scale.png"), auto;
+}
+.no-filter {
+  filter: none;
+  max-height: 100%; /* optional, only if you ALSO want to remove the height rule */
+}
+.row {
+  height: 45%;
+  width: 100%;
+  display: flex;
+}
+.line {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.translucent {
+  opacity: 0.2;
+}
+.box {
+  height: 80%;
+  width: 25%;
+}
+.bottom {
+  height: 10%;
+  width: 100%;
+  display: flex;
+}
+.smol-box {
+  height: 100%;
+  width: 8%;
+  border: 2px groove rgb(255, 255, 255);
+  padding: 0.2px;
+  /*border-radius: 5px;*/
+}
+
+.red {
+  background-color: #ca1b22;
+}
+.green {
+  background-color: #1bca1b;
+}
+.blue {
+  background-color: #1b0ce4;
+}
+.black {
+  background-color: #0a0a0a;
+}
+.white {
+  background-color: #ffffff;
+}
+.purple {
+  background-color: #7700ff;
+}
+
+.click {
+}
+.click:hover {
+  transform: scale(1.2);
+}
+.click:active {
+  transform: scale(0.8);
+}
+
+.click2 {
+}
+.click2:hover {
+  cursor: pointer;
+}
+.click2:active {
+}
+
+#Check {
+  position: fixed;
+  top: 0px;
+  right: 800px;
+  padding: 30px 100px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: rgb(93, 3, 238);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#Check.enabled {
+  background: rgba(133, 31, 1, 0.74);
+}
+
+#Direct {
+  position: fixed;
+  top: 0px;
+  right: 400px;
+  padding: 30px 100px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: rgb(93, 3, 238);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#Direct.enabled {
+  background: rgba(133, 31, 1, 0.74);
+}
+
+#Done {
+  position: fixed;
+  top: 300px;
+  right: 400px;
+  padding: 30px 30px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: rgb(255, 0, 0);
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#Done.enabled {
+  background: rgba(133, 31, 1, 0.74);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  opacity: 0.95;
+}
+
+/* Don't cover the entire screen */
+.modal-body {
+  width: 80%;
+  height: 70%;
+  background-color: black;
+  opacity: 1;
+  margin: 0;
+}
+
+.modal2 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  opacity: 0.95;
+}
+.modal2.show {
+  display: flex !important;
+  animation: fadeSlideIn 0.00000000000000000000000000000000000000000001s ease
+    forwards;
+}
+.custom-modal {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.custom-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+/* Don't cover the entire screen */
+.modal2-body {
+  width: 80%;
+  height: 70%;
+  background-color: black;
+  opacity: 1;
+  margin: 0;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+#confetti {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  animation: pop 1s ease-out;
+}
+.my-text {
+  color: rgb(255, 255, 255); /* or a hex code like #FF0000 */
+}
+.help-fullscreen {
+  background: rgba(255, 31, 1, 0.95);
+}
+/* Fullscreen modal wrapper */
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none; /* set to flex to show modal */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Content fills screen */
+.modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Background image */
+.modal-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("images/ground.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Top spacer */
+.modal-spacer-top {
+  position: relative;
+  z-index: 2;
+  height: 20%; /* adjust if needed */
+}
+
+/* Big image section */
+.modal-big-image {
+  position: relative;
+  z-index: 3;
+  height: 60%; /* THIS makes the big image take 60% of modal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-big-imagex {
+  position: relative;
+  z-index: 3;
+  height: 60%; /* THIS makes the big image take 60% of modal */
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+/* Big image itself */
+.modal-large-img {
+  max-height: 100%; /* fills the 60% container */
+  width: auto;
+}
+
+/* Bottom spacer */
+.modal-spacer-bottom {
+  position: relative;
+  z-index: 2;
+  height: 20%; /* rest of space */
+}
+/* Default (no darkening) */
+.modal-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Only darken when the modal uses this class */
+/* Apply darkening only when class 'dark-bg' is added */
+.modal-bg.dark-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94); /* adjust darkness */
+  pointer-events: none;
+  z-index: 10000000;
+}
+
+.modal2 {
+  display: none;
+}
+.custom-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden; /* ← prevents flashing */
+  transition: opacity 0.4s ease;
+  z-index: 9999;
+}
+
+.custom-modal.show {
+  opacity: 1;
+  visibility: visible; /* ← fades in smoothly, no flash */
+}
+.modal-big-image {
+  filter: grayscale(100%);
+}
+.screw-driver-cursor {
+    cursor: url("images/cursor.png"), auto;
+}
+.close {
+  opacity: 0;
+  pointer-events: none; /* Prevent clicking while hidden */
+  transition: opacity 0.5s ease;
+}
+.menumodal .close {
+  opacity: 1;             /* ensure it’s visible */
+  pointer-events: auto;    /* ensure it can be clicked */
+  color: #aaaaaa;
+  position: absolute;      /* relative to the menu modal */
+  top: 10px;
+  right: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  z-index: 1001;          /* above modal content */
+}
+.menumodal .close:hover {
+  color: #fff;
+  cursor: pointer;
+}
